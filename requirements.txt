@@ -1,0 +1,7 @@
+TimeKeeper:
+panels w/ add panel button (:split)
+panels should have:
+start time(when the panel was started)
+end time
+time difference(minutes)
+running
