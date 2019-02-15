@@ -12,6 +12,7 @@
     "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.6.5",
     "underscore": "^1.9.1"
   },
   "devDependencies": {

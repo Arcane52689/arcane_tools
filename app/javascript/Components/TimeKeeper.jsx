@@ -2,6 +2,7 @@ import React from 'react'
 import TimeSlicesCollection from 'Collections/TimeSlices';
 import TimeKeeperRow from 'Components/TimeKeeper/Row';
 import moment from 'moment';
+import { hot } from 'react-hot-loader';
 
 class TimeKeeper extends React.Component {
 
@@ -26,7 +27,9 @@ class TimeKeeper extends React.Component {
   }
 
   addSlice() {
-    this._timeSlices.add({
+    let lastSlice = this.timeSlices().first()
+    lastSlice && lastSlice.set('end_time', moment());
+    this.timeSlices().add({
       start_time: moment(),
     });
     this.setState({});
@@ -36,8 +39,8 @@ class TimeKeeper extends React.Component {
   render() {
     return (
       <div className="page">
-        <div>TimeKeeper JSX</div>
-        <button onClick={this.addSlice.bind(this)}>Add</button>
+        <div>TimeKeeper JSX 51</div>
+        <button onClick={this.addSlice.bind(this)}>{ this.timeSlices().length > 0 ? 'Add' : 'Start'}</button>
         <ul className="time-items">
           {this.timeSlices().map(function(slice, idx) {
             return (
@@ -52,4 +55,4 @@ class TimeKeeper extends React.Component {
   }
 }
 
-export default TimeKeeper;
+export default hot(module)(TimeKeeper);

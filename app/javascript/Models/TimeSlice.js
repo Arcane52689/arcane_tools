@@ -1,5 +1,6 @@
 import BaseModel from 'Models/Base';
 import moment from 'moment';
+import { timePassed } from 'Utils/Format/Number';
 
 const TimeSlice = BaseModel.extend({
   defaults: function() {
@@ -11,8 +12,9 @@ const TimeSlice = BaseModel.extend({
   },
 
   timePassed: function() {
-    var endTime = this.get('endTime') || moment();
-    return (endTime - this.get('start_time')) / 1000;
+    let endTime = this.get('endTime') || moment();
+    let seconds =  (endTime - this.get('start_time')) / 1000;
+    return timePassed(seconds);
   }
 });
 
