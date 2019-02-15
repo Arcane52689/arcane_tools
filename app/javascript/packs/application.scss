@@ -1,1 +1,9 @@
+@import '../Styles/override.scss';
 @import '~bootstrap/dist/css/bootstrap';
+@import '../Styles/variables.scss';
+
+
+body {
+  background: $light-grey;
+  color: $black;
+}
