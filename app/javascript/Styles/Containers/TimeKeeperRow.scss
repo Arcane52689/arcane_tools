@@ -1,6 +1,20 @@
-@import "Styles/variables.scss";
+@import "../variables.scss";
+
 .time-keeper-row {
-  display: flex;
-  flex-direction: row;
-  
+  margin: auto;
+  margin-bottom: 20px;
+
+  width: 80%;
+
+
+  &--active {
+    border-color: $green;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 }

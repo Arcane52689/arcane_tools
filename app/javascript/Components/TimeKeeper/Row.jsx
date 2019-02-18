@@ -1,10 +1,11 @@
 import React from 'react';
+import CustomComponent from 'Components/CustomComponent';
 import {PanelBody, PanelHeader} from 'Components/Containers/Panel';
 import Panel from 'Components/Containers/Panel';
+import styles from 'Styles/Containers/TimeKeeperRow';
+import { BEM } from '../../Utils/Format/String';
 
-class TimeKeeperRow extends React.Component {
-
-
+class TimeKeeperRow extends CustomComponent {
 
   componentDidMount() {
     this.setRefreshTimeout();
@@ -19,8 +20,15 @@ class TimeKeeperRow extends React.Component {
   }
 
   render() {
+    let bemOptions = {
+      block: 'time-keeper-row',
+      modifiers: []
+    };
+    if (!this.props.slice.get('end_time')) {
+      bemOptions.modifiers.push('active');
+    }
     return (
-      <Panel>
+      <Panel className={BEM(bemOptions)}>
         <PanelHeader>
           <input 
             onChange={function(event) {
@@ -31,13 +39,19 @@ class TimeKeeperRow extends React.Component {
             placeholder="Panel Name"
           />
         </PanelHeader>
-        <PanelBody>
-          <div>
-            Started: {this.props.slice.get('start_time').format("HH:MM:SS")}
+        <PanelBody className="time-keeper-row__body">
+          <div className="">
+            <div>
+              Started: {this.props.slice.get('start_time').format("HH:MM:SS")}
+            </div>
+            <div>
+              Duration: {this.props.slice.timePassed()}
+            </div>
+            {this.props.slice.get("end_time") && <div>
+              Ended: {this.props.slice.get('end_time').format('HH:MM:SS')}
+            </div>}
           </div>
-          <div>
-            Duration: {this.props.slice.timePassed()}
-          </div>
+         <div>
           <div>
             <input 
               onChange={function(event) {
@@ -58,9 +72,8 @@ class TimeKeeperRow extends React.Component {
               placeholder="Description"
             />
           </div>
-          {this.props.slice.get("end_time") && <div>
-            Ended: {this.props.slice.get('end_time').format('HH:MM:SS')}
-          </div>}
+         </div>
+          
         </PanelBody>
       </Panel>
     )

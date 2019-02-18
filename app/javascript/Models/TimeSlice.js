@@ -12,7 +12,7 @@ const TimeSlice = BaseModel.extend({
   },
 
   timePassed: function() {
-    let endTime = this.get('endTime') || moment();
+    let endTime = this.get('end_time') || moment();
     let seconds =  (endTime - this.get('start_time')) / 1000;
     return timePassed(seconds);
   }
