@@ -42,13 +42,13 @@ class TimeKeeperRow extends CustomComponent {
         <PanelBody className="time-keeper-row__body">
           <div className="">
             <div>
-              Started: {this.props.slice.get('start_time').format("HH:MM:SS")}
+              Started: {this.props.slice.get('start_time').format("h:mm:ss")}
             </div>
             <div>
               Duration: {this.props.slice.timePassed()}
             </div>
             {this.props.slice.get("end_time") && <div>
-              Ended: {this.props.slice.get('end_time').format('HH:MM:SS')}
+              Ended: {this.props.slice.get('end_time').format('h:mm:ss')}
             </div>}
           </div>
          <div>

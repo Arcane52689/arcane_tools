@@ -15,7 +15,29 @@ const TimeSlice = BaseModel.extend({
     let endTime = this.get('end_time') || moment();
     let seconds =  (endTime - this.get('start_time')) / 1000;
     return timePassed(seconds);
+  },
+
+  parse: function(resp) {
+    let data = _.clone(resp);
+    _.each(data, function(value, key) {
+      if (key.indexOf('time') > -1) {
+        data[key] = moment(value);
+      }
+    });
+    return data;
+  },
+
+  toJSON: function() {
+    let data = _.clone(this.attributes);
+    _.each(data, function (value, key) {
+      if (key.indexOf('time') > -1) {
+        data[key] = moment(value).toJSON();
+      }
+    });
+    return data;
   }
+
+
 });
 
 export default TimeSlice;

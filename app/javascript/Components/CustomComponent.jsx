@@ -11,7 +11,7 @@ class CustomComponent extends React.Component {
   }
 
   listeners() {
-    if (this._listeners) {
+    if (!this._listeners) {
       this._listeners = [];
     }
     return this._listeners
@@ -32,7 +32,7 @@ class CustomComponent extends React.Component {
       object: backboneObject
     });
 
-    return id;
+    return lastId + 1;
   }
 
   stopListening() {
