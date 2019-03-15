@@ -1,5 +1,5 @@
 import React from 'react'
-import TimeKeeper from 'Components/TimeKeeper';
+import TimeKeeper from 'Components/TimeKeeper.jsx';
 import ReactDOM from 'react-dom'
 
 document.addEventListener('DOMContentLoaded', () => {

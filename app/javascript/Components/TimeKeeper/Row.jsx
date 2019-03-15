@@ -1,7 +1,7 @@
 import React from 'react';
-import CustomComponent from 'Components/CustomComponent';
-import {PanelBody, PanelHeader} from 'Components/Containers/Panel';
-import Panel from 'Components/Containers/Panel';
+import CustomComponent from 'Components/CustomComponent.jsx';
+import {PanelBody, PanelHeader} from 'Components/Containers/Panel.jsx';
+import Panel from 'Components/Containers/Panel.jsx';
 import styles from 'Styles/Containers/TimeKeeperRow';
 import { BEM } from '../../Utils/Format/String';
 

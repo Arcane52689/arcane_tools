@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomComponent from 'Components/CustomComponent';
+import CustomComponent from 'Components/CustomComponent.jsx';
 import styles from 'Styles/Containers/panel';
 
 class Panel extends CustomComponent {

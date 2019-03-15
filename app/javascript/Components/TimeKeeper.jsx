@@ -1,7 +1,7 @@
 import React from 'react'
-import CustomComponent from 'Components/CustomComponent';
+import CustomComponent from 'Components/CustomComponent.jsx';
 import TimeSlicesCollection from 'Collections/TimeSlices';
-import TimeKeeperRow from 'Components/TimeKeeper/Row';
+import TimeKeeperRow from 'Components/TimeKeeper/Row.jsx';
 import moment from 'moment';
 import { hot } from 'react-hot-loader';
 
